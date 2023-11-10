@@ -1,0 +1,19 @@
+
+<html>
+    <body>
+<div class="menu" id="menu">
+    <div class="menu-item" onclick="scrollToSection('block1')">communities</div>
+    <div class="menu-item" onclick="scrollToSection('block2')">education</div>
+    <div class="menu-item" onclick="scrollToSection('block3')">stories</div>
+    <div class="menu-item" onclick="scrollToSection('block4')">FAQ</div>
+</div>
+
+<script>
+    function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

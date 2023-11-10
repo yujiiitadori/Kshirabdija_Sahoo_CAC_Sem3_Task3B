@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta name="viewport"  content="width=device-width, initial-scale=1">
+       <title>Access to Education for Marginalized Communities</title>
+       <link rel="stylesheet" href="style.css"> <!-- css page includes the homepage image -->
+    <style>
+        
+        /*text over the image, placement, colour and size*/
+            .header 
+               {position: relative;
+                text-align: center;
+                color: white; }
+             .header-text 
+               {position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-weight: bold;
+                font-size: 65px;
+                white-space: nowrap;}
+        
+        
+        
+        /*menu*/
+            .menu-toggle
+               {width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: rgba(242, 212, 228, 0.8); /* Initial background color */
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                z-index: 1000;
+                transition: background-color 0.3s ease;} /* Smooth transition effect */ 
+        /*text over the circle- reads menu*/
+            .menu-toggle::before 
+               {content: 'Menu'; /* Content changed to 'Menu' */
+                display: block;
+                width: 60px;
+                height: 60px;
+                text-align: center;
+                line-height: 60px; }
+        /*block the is seen when menu is clicked*/
+            .menu 
+               {position: fixed;
+               bottom: 100px;
+               left: 20px;
+               padding: 20px;
+               background-color: rgba(242, 212, 228, 0.8);
+               border-radius: 10px;
+               z-index: 1000;
+               opacity: 0;
+               visibility: hidden;
+               transition: opacity 0.3s, visibility 0.3s;
+               flex-direction: column;
+               display: flex;}
+        /*backgound colour of the box*/
+            .menu.show 
+              {display: flex;
+              background-color: rgba(242, 212, 228, 0.8);
+              opacity: 1;
+              visibility: visible;}
+       /*fading animation*/
+            .menu-item.fadeIn 
+               {animation: fadeIn 0.5s forwards;}
+               @keyframes fadeIn 
+                  {from 
+                    {opacity: 0;}
+                   to
+                    {opacity: 1;}  }
+        /*colour of boxex in the box lol*/
+            .menu-item 
+                {padding: 10px;
+                text-align: center;
+                margin: 5px;
+                background-color: rgba(252, 164, 209, 0.8); /* New category background color */
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;} /* Smooth transition effect */ 
+        /*colour change when hoverdover*/
+            .menu-item:hover 
+               {background-color: rgba(250, 187, 221, 0.8);}/
+        /*colour change when its selected*/
+            .menu-item.selected 
+               {background-color: rgba(210, 97, 155, 0.8);}
+        /*colourchange when it is clicked*/
+            .menu-toggle.clicked
+               {background-color: rgba(242, 212, 228, 0.8) !important;}
+            
+          
+        
+     /*colourd boxes below the picture*/   
+        .container /*positioning*/
+           {text-align: center;
+            margin-top: 0px;}
+    /*size*/
+        .block 
+           {width: 100%;
+            height: 100vh;
+            margin: 0px 0;
+            display: block;
+            cursor: pointer;
+            position: relative;}
+    /*block1*/
+         #block1 
+           {position: relative;
+            background-color: #B7CFEC;}  
+         #block2 
+          {background-color: #C6DEFF;}
+    /*block1*/
+         #block3 
+          {background-color: #B0CFDE;}
+    /*block1*/
+         #block4 
+          {background-color: #DBE9FA;}
+
+    
+        
+        
+/*BLOCK1*/    
+#block1 .image-item {
+  filter: grayscale(100%); /* Add grayscale effect by default */
+  transition: filter 0.3s ease-in-out; /* Add transition effect */
+}
+
+#block1 .image-item:hover {
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
+        
+
+        
+        
+/*BLOCK2*/   
+/*position of images in block2*/ 
+/* Add this style to center the heading in block2 */
+.block2-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.column1 {
+    float: left;
+    width: 27%; /* Adjust the width based on the number of images you want in a row */
+    margin-top: 16px;
+    padding: 0 8px;
+    box-sizing: border-box; /* Include padding and border in the width and height */
+}
+
+.block2-images-container {
+    display: flex;
+    justify-content: space-around; /* Align items in a row with space around them */
+    align-items: stretch; /* Stretch items to the height of the container */
+    height: 100vh;
+}
+
+.block2-image {
+    width: 100%; /* Make the images take up the full width of their container */
+    height: auto;
+}
+
+
+
+@media screen and (max-width: 0px) {
+  .column1 {
+    width: 100%;
+    display: block;
+  }
+}
+.block2-image {
+  width: 100%; /* Make the images take up the full width of their container */
+  height: auto;
+
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container1 {
+  padding: 20px;
+     max-width: 300px; /* Set a maximum width for the container */
+    margin: 0 auto; 
+}
+
+.container1::after, .row::after {
+  content:  "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+/*BLCOK3*/    
+/*sizing and position of images in block3*/
+.block3-image 
+ {width: 45%; 
+  height: auto; 
+  transition: all 0.3s;
+filter: brightness(0%);
+filter: grayscale(10%);}
+/*grauscale of images in block3*/
+.block3-image:hover 
+{transform: scale(1.1); 
+filter: brightness(70%);
+filter: grayscale(0%);}
+/*flip cards that are hyperlinked-block3*/  
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 600px;
+  height: 300px;
+  perspective: 1000px;
+  margin-top: 0px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+        
+        
+        
+/*colasable faq section*/             
+.collapsible {
+  background-color: #C9DFEC;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+    
+}
+
+.active, .collapsible:hover {
+  background-color: #D5D6EA;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #DBE9FA;
+}  
+        
+        
+        
+        
+        
+    </style>
+    </head>
+<body >
+<section class="header">  
+   <div class="header-text">Access to Education for Marginalized Communities</div> <!-- text over the homepage image -->
+</section> 
+
+<!--linking the menu item to the respective pages-->
+<div class="menu-toggle" onclick="toggleMenu()"></div>
+  <div class="menu" id="menu">
+      <div class="menu-item"><a href="indexx.html">home</a></div>
+        <div class="menu-item" onclick="scrollToSection('block1')">communities</div>
+        <div class="menu-item" onclick="scrollToSection('block2')">education</div>
+        <div class="menu-item" onclick="scrollToSection('block3')">stories</div>
+        <div class="menu-item" onclick="scrollToSection('block4')">FAQ</div>
+</div>
+    
+    
+<!-- block 1 aka the communities -->
+<div class="container">
+  <div class="row">
+    <div class="colored-blocks">
+      <div class="column">
+        <div id="block1" class="block" onclick="scrollToSection('block1')" style="position: relative; height: 100vh; width: 100%; display: flex; justify-content: center; align-items: center;">
+          <a href="disable.html">
+            <img src="images/disabe.jpg" alt="Image 1" class="image-item" style="position: relative; transform: rotate(10deg);width: 350px; height: 350px;">
+          </a>
+      <a href="tribal.html">
+        <img src="images/tribe.jpg" alt="Image 2" class="image-item" style="position: relative; transform: rotate(-10deg);width: 350px; height: 350px;">
+      </a>
+      <a href="dalit.html">
+        <img src="images/dalit.jpg" alt="Image 3" class="image-item" style="position: relative; transform: rotate(10deg);width: 350px; height: 350px;">
+      </a>
+      <a href="mountain2.html">
+        <img src="images/mount.jpg" alt="Image 4" class="image-item" style="position: relative; transform: rotate(-10deg);width: 350px; height: 350px;">
+      </a>
+    </div>
+  </div>
+      </div></div></div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<!--block 2 aka the education--> <!--add the text on the cards and edit the text in the linked page-->
+<div id="block2" class="block" onclick="scrollToSection('block2')">
+    <div class="row">
+        <div class="block2-content">
+            <h1>Information about Education</h1>
+            <div class="block2-images-container">
+                <div class="column1">
+                    <div class="card">
+                        <img src="images/problem.png" alt="Image 1" class="image-item block2-image">
+                        <div class="container1">
+                            <h2>Challenges</h2>
+                            
+                            <p>what are the major problems that the Marginalized Communities face whith regards to their education </p>
+                            <p></p><br>
+                            <p><a href="problems.html" class="button">Learn More</a></p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="column1">
+                    <div class="card">
+                        <img src="images/sol.png" alt="Image 1" class="image-item block2-image">
+                        <div class="container1">
+                            <h2>Progress</h2>
+                            <p>how education for Marginalized Communities has improved over the years </p><br>
+                            <p><a href="progress.html" class="button">Learn More</a></p>
+                        </div>
+                    </div>
+                </div>    <div class="column1">
+                    <div class="card">
+                        <img src="images/help.png" alt="Image 1" class="image-item block2-image">
+                        <div class="container1">
+                            <h2>Assistance </h2>
+                            <p> NGO websites and government scheems athat help the Marginalized Communities get the education that they deserve</p>
+                            <p>This page also includes a list of websites where you can help</p>
+                            <p><a href="helping_hands.html" class="button">Learn More</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--block 3 aka the stories-->       
+<div id="block3" class="block" onclick="scrollToSection('block3')" style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
+    <h2 style="text-align: center; margin-bottom: 0px;">Stories</h2>
+    <p style="text-align: center; margin-bottom: 0px;">Click on the image to watch their stories<br>hover over to read a bit about therie stories</p>
+    <div class="card-container">
+    <a href="https://www.youtube.com/embed/QRbS32N01CA">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/rodesideschool.png" alt="Image 1" class="image-item block3-image" style="display: block; margin: 0 auto; width: 600px; height: 300px; object-fit: cover;margin-top: 0px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>Road Side School- Delhi</h1> 
+            <p>Shyam Bihari Prasad</p> 
+            <p>A selfless retiree has set up a school on the roadside for some of New Delhi's poorest
+children. A passerby might mistake Shyam Bihari Prasad’s students for a ragged bunch
+of street beggars but this unremarkable pavement is an invaluable resource for children
+to educate themselves. The 67-year-old retired from his job in telecommunications in
+2010 to look after his granddaughter with his wife.Three years ago he decided to set up
+the unconventional school to tackle the gaps in education for New Delhi's poorest class
+of children. He teaches his students Hindi, English, Science, Math and Social Sciences
+The retiree started with no mats to sit on, with only five students, teaching only orally.
+Over time, more students came and people living in the vicinity or just passing by
+donated mats books, pencils, boards and more which made up his school. During days
+of bad weather, a nearby temple allows him to teach the students inside.</p>
+          </div>
+        </div>
+      </div>
+  </a>
+        <br>
+    <a href="https://www.youtube.com/embed/EEJpkEctSEA">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/trektoschool.jpg" alt="Image 2" class="image-item block3-image" style="display: block; margin: 0 auto; width: 600px; height: 300px; object-fit: cover;margin-top: 0px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>Dangerous Ways to School</h1> 
+            <p>
+Twice a year, Father Latak undertakes the challenging journey to the boarding school with his ten-year-old son, Motup, crossing the notorious Chadar, the path over the cloak of ice. Before embarking, Father Latak carefully observes the sky, ensuring no storms loom. The family, along with three other students and Jordan's father Thinly, begins the trek, a perilous route fraught with risks.
+
+Motup, privileged to attend a better school in town, plays near their hut one last time before the journey. The family prepares with wool socks, prayers, and mantras for protection. The expedition requires complete trust in the fathers' experience. Walking cautiously on the frozen river, they face the challenges of early spring, risking thinning ice. Father Latak leads, testing the ice with a stick before each step.
+
+Navigating treacherous rocky paths, they encounter dangers from avalanches and melting ice. Finding shelter in a cave, they rest before tackling the most hazardous part. Negotiating a narrow strip of ice, Father Latak pulls Motup alongside. After four days of unpredictable obstacles, they reach Leh and the school. Fathers swiftly return, wary of the melting river's uncertainties on their way back.</p>
+          </div>
+        </div>
+      </div>
+  </a>
+</div>
+    </div>
+    
+
+ <!--block 4 aka the faq_page-->                    
+<div id="block4" class="block" onclick="scrollToSection('block4')" style="displa align-content: center;justify-content: center; align-items: center;">
+    <div class="faq-container" style="text-align: center;">
+       <br><br> 
+<h1>FAQ </h1>
+<h3>Questions that are frequently asked</h3>
+        <p>To reveal the answer, click on the question</p>
+    <br>
+<button type="button" class="collapsible">What are the main challenges faced by marginalized communities in accessing quality education?</button>
+<div class="content">
+  <p>        Marginalized communities ofteleftce challenges such as lack of infrastructure, insufficient resources, and discrimination, hindering their access to quality education.</p>
+</div>
+<button type="button" class="collapsible">How does education contribute to breaking the cycle of poverty within marginalized communities?</button>
+<div class="content"style="text-align: center;">
+  <p>Education equips individuals with skills and knowledge, empowering them to secure better employment opportunities and escape the cycle of poverty.</p>
+</div>
+<button type="button" class="collapsible">What initiatives exist to promote education among marginalized communities globally?</button>
+<div class="content"style="text-align: center;">
+  <p>Various NGOs, government programs, and international initiatives focus on providing scholarships, building schools, and implementing educational reforms to uplift marginalized communities.</p>
+</div> 
+        <button type="button" class="collapsible">How can technology be leveraged to improve education in remote and marginalized areas?</button>
+<div class="content"style="text-align: match-parent;">
+  <p>Technology can facilitate e-learning, providing access to educational resources, online courses, and interactive tools, bridging the gap for marginalized communities in remote areas.</p>
+</div>
+        <button type="button" class="collapsible"> What role does cultural sensitivity play in designing educational programs for marginalized groups?</button>
+<div class="content"style="text-align: match-parent;">
+  <p>Cultural sensitivity ensures that educational programs respect and integrate the cultural context of marginalized communities, making the learning experience more relevant and effective.</p>
+</div>
+        <button type="button" class="collapsible">How can individuals contribute to improving education for marginalized communities?</button>
+<div class="content"style="text-align: match-parent;">
+  <p>Individuals can contribute by volunteering, supporting NGOs, donating educational resources, and advocating for policies that promote equal access to education.</p>
+</div>
+        <button type="button" class="collapsible">What steps can governments take to address educational disparities among different socioeconomic groups?</button>
+<div class="content"style="text-align: match-parent;">
+  <p>Governments can invest in education infrastructure, allocate resources equitably, and implement policies that address systemic inequalities to ensure marginalized communities receive quality education.</p>
+</div>
+        <button type="button" class="collapsible">In what ways can mentorship programs benefit students from marginalized communities?</button>
+<div class="content"style="text-align: match-parent;">
+  <p>Mentorship programs provide guidance, support, and role models, helping students from marginalized communities navigate educational challenges and make informed decisions about their future.</p>
+</div>
+        <button type="button" class="collapsible">How can education be tailored to meet the specific needs of marginalized groups, such as indigenous populations or refugees?</button>
+<div class="content"style="text-align: match-parent;">
+  <p>Customized curricula, language-sensitive teaching methods, and community involvement can ensure that education is adapted to the unique needs and circumstances of marginalized groups.</p>
+</div>
+        <button type="button" class="collapsible">What indicators can be used to measure the progress of educational initiatives in marginalized communities?</button>
+<div class="content"style="text-align: match-parent;">
+  <p>Indicators such as literacy rates, school enrollment, and skill development can be used to assess the effectiveness of educational initiatives and track the progress of marginalized communities over time.</p>
+</div>
+        
+    </div>
+</div>           
+ 
+<!--JAVA script-->       
+<script>
+    function redirectToPage(url) {
+    window.location.href = url;
+}
+        //menu 
+ function toggleMenu() {
+            var menu = document.getElementById('menu');
+            var menuToggle = document.querySelector('.menu-toggle');
+
+            if (menu.style.opacity === '0') {
+                menu.style.visibility = 'visible';
+                menu.style.opacity = '1';
+                menu.classList.add('show');
+                menuToggle.classList.add('clicked');
+                animateMenuItems();
+            } else {
+                menu.style.visibility = 'hidden';
+                menu.style.opacity = '0';
+                menu.classList.remove('show');
+                menuToggle.classList.remove('clicked');
+            }
+        }
+
+        function animateMenuItems() {
+            var menuItems = document.querySelectorAll('.menu-item');
+            var delay = 200; // Delay time in milliseconds
+
+            menuItems.forEach(function (menuItem, index) {
+                menuItem.style.opacity = 0;
+                setTimeout(function () {
+                    menuItem.style.opacity = 1;
+                }, delay * index);
+            });
+        }
+    
+
+//scrolling
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(function (menuItem) {
+                menuItem.classList.remove('selected');
+            });
+
+            var selectedItem = document.querySelector("[onclick*='" + sectionId + "']");
+            selectedItem.classList.add('selected');
+
+            // Revert the menu item color back to its original state after a category is clicked
+            setTimeout(function () {
+                selectedItem.classList.remove('selected');
+            }, 1000); // Adjust the time as needed
+        }
+
+        // Close the menu when clicking anywhere on the screen
+        document.addEventListener('click', function (event) {
+            var menu = document.getElementById('menu');
+            var menuToggle = document.querySelector('.menu-toggle');
+            var isClickInsideMenu = menu.contains(event.target);
+            var isClickInsideToggle = menuToggle.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickInsideToggle) {
+                menu.classList.remove('show');
+                menu.style.visibility = 'hidden';
+                menu.style.opacity = '0';
+                menuToggle.classList.remove('clicked');
+            }
+        });
+    
+
+  
+    
+    
+    //faq colasable 
+    var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress in Education for Marginalized Communities in India</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+           .cancel-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .cancel-button:before {
+            content: 'X';
+        }
+
+        .cancel-button:hover {
+            background-color: #ddd;
+            border-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+                <div class="cancel-button" onclick="redirectToIndex()"></div>
+
+        <h1>Overview of Educational Scenario for Marginalized Communities in India</h1>
+        <h2>Current Status and Progress</h2>
+        <p>The enrollment rates among marginalized communities, including Dalits, Adivasis, and other socio-economically disadvantaged groups, have shown a gradual increase in recent years. According to recent data, the enrollment rate has improved by 5% in the last decade. Efforts to boost literacy levels have yielded positive results, with a notable increase in literacy rates among marginalized communities. The literacy rate has risen by 10% over the past decade, signifying a tangible improvement in educational access and outcomes.</p>
+
+        <h2>Challenges Faced</h2>
+        <p>Persistent socio-economic disparities continue to hinder educational access for marginalized communities, leading to a significant disparity in educational outcomes compared to more privileged sections of society. Inadequate infrastructure in remote and rural areas remains a pressing issue, limiting the availability of schools and educational facilities for marginalized communities.</p>
+
+        <h2>Initiatives and Interventions</h2>
+        <p>The Government of India's flagship program, Sarva Shiksha Abhiyan (SSA), has played a pivotal role in promoting universal elementary education, particularly focusing on marginalized communities. It emphasizes the provision of free and compulsory education for children aged 6-14 years. The Mid-Day Meal Scheme, implemented across various states, aims to enhance school enrollment and retention among marginalized communities by providing nutritious meals to school children. Various scholarship programs, such as the Pre-Matric and Post-Matric scholarships, have been introduced to support students from marginalized communities in pursuing higher education and reducing financial barriers. Community-based educational initiatives have been instrumental in establishing community schools, providing alternative education, and fostering a supportive learning environment for marginalized children. Reservation policies in educational institutions and government jobs have facilitated increased representation and participation of marginalized communities, promoting social inclusivity and equity in the education sector.</p>
+
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Enrollment Rate', 'Literacy Rate', 'Infrastructure'],
+                datasets: [{
+                    label: 'Progress in Education for Marginalized Communities',
+                    data: [5, 10, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+    fetch('menu.html')
+        .then(response => response.text())
+        .then(text => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const menuContent = doc.querySelector('.menu');
+            document.body.insertAdjacentElement('afterbegin', menuContent);
+        });
+
+        function redirectToIndex() {
+            window.location.href = "indexx.html";
+        }
+    </script>
+</body>
+</html>
