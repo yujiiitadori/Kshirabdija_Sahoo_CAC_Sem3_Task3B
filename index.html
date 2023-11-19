@@ -341,42 +341,72 @@ display: flex;
         <div class="menu-item" onclick="scrollToSection('block4')">FAQ</div>
 </div>
     
+
     
 <!-- block 1 aka the communities -->
 <div class="container">
   <div class="row">
     <div class="colored-blocks">
       <div class="column">
-        <div id="block1" class="block" onclick="scrollToSection('block1')" style="position: relative; height: 100vh; width: 100%; display: flex; justify-content: center; align-items: center;">
-          <a href="disable.html">
-            <img src="images/disabe.jpg" alt="Image 1" class="image-item" style="position: relative; transform: rotate(10deg);width: 350px; height: 350px;">
-          </a>
-      <a href="tribal.html">
-        <img src="images/tribe.jpg" alt="Image 2" class="image-item" style="position: relative; transform: rotate(-10deg);width: 350px; height: 350px;">
-      </a>
-      <a href="dalit.html">
-        <img src="images/dalit.jpg" alt="Image 3" class="image-item" style="position: relative; transform: rotate(10deg);width: 350px; height: 350px;">
-      </a>
-      <a href="mountain2.html">
-        <img src="images/mount.jpg" alt="Image 4" class="image-item" style="position: relative; transform: rotate(-10deg);width: 350px; height: 350px;">
-      </a>
+        <div id="block1" class="block" onclick="scrollToSection('block1')">
+          <!-- Heading and Subheading added here -->
+          <div class="heading-container">
+              <br><br>
+            <h1>Diffrent Communities</h1>
+            <p>click on the imgages to read more about them</p>
+          </div>
+
+          <!-- Updated styling to center images horizontally -->
+          <div class="images-container" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 100px;">
+            <!-- Image 1 -->
+            <div class="image-wrapper">
+              <a href="disable.html">
+                <img src="images/disabe.jpg" alt="Image 1" class="image-item" style="position: relative; transform: rotate(10deg);width: 350px; height: 350px;">
+              </a><br><br><br>
+              <div class="image-caption">Differently Abled Community</div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="image-wrapper">
+              <a href="tribal.html">
+                <img src="images/tribe.jpg" alt="Image 2" class="image-item" style="position: relative; transform: rotate(-10deg);width: 350px; height: 350px;">
+              </a><br><br><br>
+              <div class="image-caption">Tribal Community</div>
+            </div>
+
+            <!-- Image 3 -->
+            <div class="image-wrapper">
+              <a href="dalit.html">
+                <img src="images/dalit.jpg" alt="Image 3" class="image-item" style="position: relative; transform: rotate(10deg);width: 350px; height: 350px;">
+              </a><br><br><br>
+              <div class="image-caption">Dalit Community</div>
+            </div>
+
+            <!-- Image 4 -->
+            <div class="image-wrapper">
+              <a href="mountain2.html">
+                <img src="images/mount.jpg" alt="Image 4" class="image-item" style="position: relative; transform: rotate(-10deg);width: 350px; height: 350px;">
+              </a><br><br><br>
+              <div class="image-caption">Himalaya/Hill Community</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-      </div></div></div>
+</div>
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
     
     
 <!--block 2 aka the education--> <!--add the text on the cards and edit the text in the linked page-->
 <div id="block2" class="block" onclick="scrollToSection('block2')">
     <div class="row">
-        <div class="block2-content">
+        <div class="block2-content"><br>
             <h1>Information about Education</h1>
             <div class="block2-images-container">
                 <div class="column1">
