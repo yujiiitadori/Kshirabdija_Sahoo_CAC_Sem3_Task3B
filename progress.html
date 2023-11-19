@@ -44,6 +44,68 @@
             background-color: #ddd;
             border-color: #999;
         }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .cancel-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .cancel-button:before {
+            content: 'X';
+        }
+
+        .cancel-button:hover {
+            background-color: #ddd;
+            border-color: #999;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -59,8 +121,54 @@
 
         <h2>Initiatives and Interventions</h2>
         <p>The Government of India's flagship program, Sarva Shiksha Abhiyan (SSA), has played a pivotal role in promoting universal elementary education, particularly focusing on marginalized communities. It emphasizes the provision of free and compulsory education for children aged 6-14 years. The Mid-Day Meal Scheme, implemented across various states, aims to enhance school enrollment and retention among marginalized communities by providing nutritious meals to school children. Various scholarship programs, such as the Pre-Matric and Post-Matric scholarships, have been introduced to support students from marginalized communities in pursuing higher education and reducing financial barriers. Community-based educational initiatives have been instrumental in establishing community schools, providing alternative education, and fostering a supportive learning environment for marginalized children. Reservation policies in educational institutions and government jobs have facilitated increased representation and participation of marginalized communities, promoting social inclusivity and equity in the education sector.</p>
+        
+        <p>India literacy rate for 2018 was 74.37%, a 5.07% increase from 2011.<br>
+India literacy rate for 2011 was 69.30%, a 6.55% increase from 2006.<br>
+India literacy rate for 2006 was 62.75%, a 1.74% increase from 2001.<br>
+India literacy rate for 2001 was 61.01%, a 12.79% increase from 1991.</p>
+        
+           <table>
+            <tr>
+                <th colspan="4">India Literacy Rate - Historical Data</th>
+            </tr>
+            <tr>
+                <td>Year</td>
+                <td>Literacy Rate </td>
+                <td>Annual Change</td>
+               </tr>
+               <tr>
+                <td>1981 </td>
+                <td>40.76%	 </td>
+                <td>7.46% </td>
+            </tr><tr>
+                <td>1991 </td>
+                <td>48.22%	 </td>
+                <td>7.46 </td>
+            </tr>
+               <tr>
+                <td>2001 </td>
+                <td>61.01%	 </td>
+                <td>12.79% </td>
+            </tr>
+               <tr>
+                <td>2006 </td>
+                <td>62.75%	 </td>
+                <td>1.74% </td>
+            </tr>
+               <tr>
+                <td>2011 </td>
+                <td>69.30%	 </td>
+                <td>6.55% </td>
+            </tr>
+            <tr>
+                <td>2018 </td>
+                <td>74.37%	 </td>
+                <td>5.07% </td>
+            </tr>
+               
+        </table>
 
-        <canvas id="myChart" width="400" height="400"></canvas>
+           <canvas id="myChart" width="400" height="300"></canvas>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -69,21 +177,20 @@
         const myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Enrollment Rate', 'Literacy Rate', 'Infrastructure'],
+                labels: ['1981','1991', '2001', '2006', '2011', '2018'],
                 datasets: [{
-                    label: 'Progress in Education for Marginalized Communities',
-                    data: [5, 10, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)'
-                    ],
+                    label: 'Annual Change ',
+                    data: [7.46, 7.46, 12.79, 1.74, 6.55, 5.07],
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
                     borderWidth: 1
+                }, {
+                    label: 'Litracy Rate',
+                    data: [40.67,48.22,61.01,62.75,69.30,74.37],
+                    fill: false,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    type: 'line'
                 }]
             },
             options: {
@@ -94,15 +201,15 @@
                 }
             }
         });
-        
-    fetch('menu.html')
-        .then(response => response.text())
-        .then(text => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, 'text/html');
-            const menuContent = doc.querySelector('.menu');
-            document.body.insertAdjacentElement('afterbegin', menuContent);
-        });
+
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(text => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const menuContent = doc.querySelector('.menu');
+                document.body.insertAdjacentElement('afterbegin', menuContent);
+            });
 
         function redirectToIndex() {
             window.location.href = "indexx.html";
